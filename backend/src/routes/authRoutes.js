@@ -1,17 +1,14 @@
 const express = require("express");
 
-// const {
-//   registerUser
-// } = require("../controllers/authController");
-
-const router = express.Router();
-
 const {
   registerUser,
   loginUser
 } = require("../controllers/authController");
 
+const router = express.Router();
+
 const { body } = require("express-validator");
+
 router.post(
   "/register",
   [
@@ -21,8 +18,6 @@ router.post(
   ],
   registerUser
 );
-
-router.post("/register", registerUser);
 
 router.post("/login", loginUser);
 
